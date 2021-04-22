@@ -1,13 +1,16 @@
 import { useState } from "react";
 import {useVideo} from "../Contexts";
 import { v4 as uuidv4 } from 'uuid';
+import {addToPlaylistHandler} from "../Utilities"
 // import {playlists} from "./Playlists";
 
 
-function UserPlaylists({item}){
+function UserPlaylists({playlist,videoDetails}){
+  const {state:{playlists},dispatch} = useVideo();
+  
   return <li>
-  <input id={item.listId} type="checkbox" />
-  <label for={item.listId}>{item.listName}</label>
+  <input onChange={()=>addToPlaylistHandler(playlists,dispatch,playlist,videoDetails)} id={playlist.listId} type="checkbox" />
+  <label for={playlist.listId}>{playlist.listName}</label>
 </li>
 }
 
@@ -19,8 +22,9 @@ export function PlaylistModal({display,setDisplay,videoDetails}) {
   const {state:{playlists},dispatch} = useVideo();
 
   function createNewPlaylist(playlistName){
-    // playlists.push( { listName:playlistName,listId:uuidv4(),listVideos:[] } );
-    // setPlaylistName("")
+    playlists.push( { listName:playlistName,listId:uuidv4(),listVideos:[] } );
+    setPlaylistName("")
+    
     }
 
    
@@ -34,8 +38,8 @@ export function PlaylistModal({display,setDisplay,videoDetails}) {
       </div>
       <div className="modal-body">
           <ul className="list-non-bullet">
-           {playlists.map(item=>{
-             return  <UserPlaylists item={item}/>
+           {playlists.map(playlist=>{
+             return  <UserPlaylists playlist={playlist} videoDetails={videoDetails}/>
            })}
           </ul>
        <div>

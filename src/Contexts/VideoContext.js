@@ -1,4 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
+import {addToPlaylistHandler} from "../Utilities";
 // import {reducer} from "./Contexts";
 
 const VideoContext=createContext();
@@ -18,7 +19,13 @@ export const VideoProvider= ({children})=> {
          return {...state,historyVideos:[...state.historyVideos,{...action.payload,existsInHistory:true}]}
         }
         case "ADD_TO_PLAYLISTS":{
-          return {...state,playlists:[...state.playlists,{}]}
+
+          const returnedValue= addToPlaylistHandler(state.playlists,action.payload);
+          if(!returnedValue){
+            return {...state,playlists:[...state.playlists,{...action.payload,existsInPlaylist:true}]}
+          }
+          return {...state,playlists:[...state.playlists,{...action.payload,existsInPlaylist:false}]}
+          
         }
       default:
           return state
