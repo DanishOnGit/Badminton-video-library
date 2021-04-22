@@ -4,3 +4,4 @@ export {LikedVideos} from "./LikedVideos";
 export {WatchLater} from "./WatchLater";
 export {WatchHistory} from "./WatchHistory";
 export {VideoPlayer} from "./ReactPlayer";
+export {PlaylistModal} from "./PlaylistModal";

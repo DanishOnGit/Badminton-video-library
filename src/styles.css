@@ -7,6 +7,10 @@
 .pointer{
   cursor: pointer;
 }
+.modal-wrapper{
+  text-align: left;
+  top:30%;
+}
 
 
 /* Home page */
@@ -168,3 +172,4 @@ margin: 0 0.5rem;
     
   }
 }
+

@@ -17,13 +17,18 @@ export const VideoProvider= ({children})=> {
        case "ADD_TO_HISTORY":{
          return {...state,historyVideos:[...state.historyVideos,{...action.payload,existsInHistory:true}]}
         }
+        case "ADD_TO_PLAYLISTS":{
+          return {...state,playlists:[...state.playlists,{}]}
+        }
       default:
           return state
     }
   } 
   const initialState={likedVideos:[],
   watchLaterVideos:[],
-historyVideos:[]}
+historyVideos:[],
+playlists:[]
+}
 
 const [state,dispatch]=useReducer(reducer,initialState)
 return (<VideoContext.Provider value={{state,dispatch}}>
