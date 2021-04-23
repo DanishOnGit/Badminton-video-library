@@ -21,11 +21,13 @@ export const Home = () => {
               <span className="list-item-title">History</span>
             </li>
           </NavLink>
-
+          
+          <NavLink to="/playlists">
           <li className="pointer">
             <i class="fas fa-list pointer"></i>
             <span className="list-item-title">Playlists</span>
           </li>
+          </NavLink>
 
           <NavLink to="/watchLaterVideos">
             <li className="pointer">

@@ -8,9 +8,9 @@ import {addToPlaylistHandler} from "../Utilities"
 function UserPlaylists({playlist,videoDetails}){
   const {state:{playlists},dispatch} = useVideo();
   
-  return <li>
+  return <li >
   <input onChange={()=>addToPlaylistHandler(playlists,dispatch,playlist,videoDetails)} id={playlist.listId} type="checkbox" />
-  <label for={playlist.listId}>{playlist.listName}</label>
+  <label htmlFor={playlist.listId}>{playlist.listName}</label>
 </li>
 }
 
@@ -19,7 +19,7 @@ export function PlaylistModal({display,setDisplay,videoDetails}) {
 
   const [playlistName,setPlaylistName]=useState("");
   
-  const {state:{playlists},dispatch} = useVideo();
+  const {state:{playlists}} = useVideo();
 
   function createNewPlaylist(playlistName){
     playlists.push( { listName:playlistName,listId:uuidv4(),listVideos:[] } );
@@ -39,12 +39,13 @@ export function PlaylistModal({display,setDisplay,videoDetails}) {
       <div className="modal-body">
           <ul className="list-non-bullet">
            {playlists.map(playlist=>{
-             return  <UserPlaylists playlist={playlist} videoDetails={videoDetails}/>
+             return  <UserPlaylists playlist={playlist} videoDetails={videoDetails} key={playlist.listId}/>
            })}
           </ul>
        <div>
          <input value={playlistName} onChange={(e)=>setPlaylistName(e.target.value)} type="text" placeholder="Add new playlist" />
-         <button disabled={playlistName===""?true:false} onClick={()=>createNewPlaylist(playlistName)} className="btn btn-primary"><i className="fas fa-plus"></i></button>
+         <button  onClick={()=>createNewPlaylist(playlistName)} className="btn btn-primary"><i className="fas fa-plus"></i></button>
+         
          </div>
       </div>
       <div className="modal-footer">

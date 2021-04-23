@@ -1,5 +1,5 @@
 import "./styles.css";
-import { Navbar, Home, LikedVideos,WatchLater,WatchHistory} from "./Components";
+import { Navbar, Home, LikedVideos,WatchLater,WatchHistory,Playlists} from "./Components";
 import { VideoPlayer } from "./Components";
 import { Routes, Route } from "react-router-dom";
 
@@ -14,6 +14,7 @@ export default function App() {
         <Route path="/likedVideos" element={<LikedVideos />} />
         <Route path="/watchLaterVideos" element={<WatchLater />} />
         <Route path="/watchHistory" element={<WatchHistory />} />
+        <Route path="/playlists" element={<Playlists />}/>
       </Routes>
     </div>
   );

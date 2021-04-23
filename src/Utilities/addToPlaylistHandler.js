@@ -1,20 +1,24 @@
 
 function checkIfPresentInPlaylist(playlistsArray,playlist,videoDetails){
- let {listVideos} = playlistsArray.find(item=>item.listId===playlist.listId)
+ let selectedPlaylist = playlistsArray.find(item=>item.listId===playlist.listId)
  
-const videoObject= listVideos.find(video=>video.id===videoDetails.id)
+console.log("logging listVideos array...",selectedPlaylist)
+const videoObject= selectedPlaylist?.listVideos.find(video=>video.id===videoDetails.id)
+console.log({videoObject});
  return videoObject;
 }
+
 
 export function addToPlaylistHandler(playlists,dispatch,playlist,videoDetails){
   
   const result = checkIfPresentInPlaylist(playlists,playlist,videoDetails);
   if(!result){
-    dispatch({type:"ADD_TO_PLAYLIST",payload:videoDetails.id})
-  }
-  else {
     
+    dispatch({type:"ADD_TO_PLAYLISTS",payload:{videoDetails,playlist}})
+    // dispatch({type:"ADD_TO_PLAYLISTS",payload:playlist})
+
   }
+  
 }
 
 

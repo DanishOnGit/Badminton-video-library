@@ -19,12 +19,23 @@ export const VideoProvider= ({children})=> {
          return {...state,historyVideos:[...state.historyVideos,{...action.payload,existsInHistory:true}]}
         }
         case "ADD_TO_PLAYLISTS":{
+                     console.log("action payload is ",action.payload)
+          // const returnedValue= addToPlaylistHandler(state.playlists,action.payload);
+          // if(!returnedValue){}
 
-          const returnedValue= addToPlaylistHandler(state.playlists,action.payload);
-          if(!returnedValue){
-            return {...state,playlists:[...state.playlists,{...action.payload,existsInPlaylist:true}]}
-          }
-          return {...state,playlists:[...state.playlists,{...action.payload,existsInPlaylist:false}]}
+            // map thru paylist Array. Then find the playlist which matches input checbox Id
+
+              const result = state.playlists.map(list=>{
+                 if(list.listId===action.payload.playlist.listId){
+                   return {...list,listVideos:[...list.listVideos,{...action.payload.videoDetails}]}
+                 }
+                 return list;
+              })
+              return {...state,playlists:[...result]}
+          
+            // return {...state,playlists:[...state.playlists,{...action.payload,existsInPlaylist:true}]}
+          
+          // return {...state,playlists:[...state.playlists,{...action.payload,existsInPlaylist:false}]}
           
         }
       default:
