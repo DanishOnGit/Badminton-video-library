@@ -10,19 +10,19 @@ export function Playlists() {
         console.log("logginf playist...",playlist);
         return (
           <div>
-            <h3>{playlist.listName}</h3>
+            <h2 className="playlist-heading">{playlist.listName}</h2>
             <div className="playlist-items-wrapper">
             {playlist.listVideos.map((item) => {
               return (
-                <div className="video-item" key={item.id}>
-                  <Link to={`/video/${item.id}`}>
-                    {" "}
+                <Link to={`/video/${item.id}`}><div className="video-item pointer video-item-link" key={item.id}>
+                  
+                    
                     <img
                       style={{ width: "100%", height: "50%" }}
                       src={item.thumbnail}
                       alt="thumbnail"
-                    />{" "}
-                  </Link>
+                    />
+                  
                   <div className="video-description">
                     <div class="avatar-wrapper-small">
                       <img
@@ -35,11 +35,13 @@ export function Playlists() {
                     <p className="small">{item.channelName}</p>
                     <p>{item.level}</p>
                   </div>
-                </div>
+                </div></Link>
               );
             })}
             </div>
+            <hr/>
           </div>
+          
         );
       })}
     </div>

@@ -21,7 +21,7 @@ export const VideoPlayer = () => {
     <>
     <div className="video-player-wrapper">
       <PlaylistModal display={display} setDisplay={setDisplay} videoDetails={videoDetails} />
-      <ReactPlayer onStart={()=>!checkIfAlreadyPresent(historyVideos,videoId)?dispatch({type:"ADD_TO_HISTORY",payload:videoDetails}):null}
+      <ReactPlayer className="video-player" onStart={()=>!checkIfAlreadyPresent(historyVideos,videoId)?dispatch({type:"ADD_TO_HISTORY",payload:videoDetails}):null}
         controls={true}
         url={`https://www.youtube.com/watch?${videoId}`}
       />
@@ -39,9 +39,9 @@ export const VideoPlayer = () => {
           </li>
         </ul>
 
-        <ul className="interactions-wrapper__note list-non-bullet">
+        {/* <ul className="interactions-wrapper__note list-non-bullet">
           <li className="pointer"><i className="fas fa-pen pointer"></i> Add Notes</li>
-        </ul>
+        </ul> */}
 
       </div>
       </div>

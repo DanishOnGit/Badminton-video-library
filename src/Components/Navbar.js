@@ -9,24 +9,7 @@ export function Navbar() {
           </NavLink>
         </div>
 
-        {/* <div>
-          <ul className="list-items-flex list-non-bullet">
-            <li>
-              <Link to="wishlist">
-                <button className="btn-icon btn-icon-hover">
-                  <i className="far fa-heart"></i>
-                </button>
-              </Link>
-            </li>
-            <li>
-              <Link to="cart">
-                <button className="btn-icon btn-icon-hover relative-positioned">
-                  <i className="fas fa-shopping-cart"></i>
-                </button>
-              </Link>
-            </li>
-          </ul>
-        </div> */}
+        
       </nav>
     </div>
   );

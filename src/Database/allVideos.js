@@ -142,7 +142,7 @@ avatar:"https://i.postimg.cc/hhr25Svj/salman-hossain-saif-n-Lerr-P856-o-unsplash
                                                                     videoTitle:"BASIC BADMINTON FOR BEGINNERS - PART 1 OF 3",
                                                                     channelName:"Shuttle Life",
                                                                     level:"Beginner",
-                                                                    thumbnail:"https://i.ytimg.com/vi/MsHMCZlcrXM/sddefault.jpg",
+                                                                    thumbnail:"https://i.ytimg.com/vi/BxHY39Th0LI/sddefault.jpg",
                                                                     avatar:"https://i.postimg.cc/hhr25Svj/salman-hossain-saif-n-Lerr-P856-o-unsplash.jpg"
                                                                       },
                                                                       {
@@ -150,7 +150,7 @@ avatar:"https://i.postimg.cc/hhr25Svj/salman-hossain-saif-n-Lerr-P856-o-unsplash
                                                                         videoTitle:"BASIC BADMINTON FOR BEGINNERS - PART 1 OF 3",
                                                                         channelName:"Shuttle Life",
                                                                         level:"Beginner",
-                                                                        thumbnail:"https://i.postimg.cc/KvwSPfLg/salman-hossain-saif-24z-MNig-Ma5-A-unsplash.jpg",
+                                                                        thumbnail:"https://i.ytimg.com/vi/pB8dX6InWyM/sddefault.jpg",
                                                                         avatar:"https://i.postimg.cc/hhr25Svj/salman-hossain-saif-n-Lerr-P856-o-unsplash.jpg"
                                                                           },
                                                                           {
@@ -158,7 +158,7 @@ avatar:"https://i.postimg.cc/hhr25Svj/salman-hossain-saif-n-Lerr-P856-o-unsplash
                                                                             videoTitle:"BASIC BADMINTON FOR BEGINNERS - PART 1 OF 3",
                                                                             channelName:"Shuttle Life",
                                                                             level:"Beginner",
-                                                                            thumbnail:"https://i.postimg.cc/KvwSPfLg/salman-hossain-saif-24z-MNig-Ma5-A-unsplash.jpg",
+                                                                            thumbnail:"https://i.ytimg.com/vi/Z0Xlar2L39M/sddefault.jpg",
                                                                             avatar:"https://i.postimg.cc/hhr25Svj/salman-hossain-saif-n-Lerr-P856-o-unsplash.jpg"
                                                                               }
 ]
