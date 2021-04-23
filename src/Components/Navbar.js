@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export function Navbar() {
   return (
     <div>
       <nav className="nav-wrapper-3">
         <div className="logoAndList-wrapper">
-          <Link to="/">
+          <NavLink to="/" className="side-nav-link">
             <div className="brand">One-View</div>
-          </Link>
+          </NavLink>
         </div>
 
         {/* <div>

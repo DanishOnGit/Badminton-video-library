@@ -8,35 +8,35 @@ export const Home = () => {
       <aside className="home-wrapper__aside">
         <ul className="home-wrapper__aside__list">
 
-          <NavLink to="/">
+          <NavLink to="/" className="side-nav-link">
             <li className="pointer">
               <i className="fas fa-home pointer"></i>
               <span className="list-item-title">Home</span>
             </li>
           </NavLink>
 
-          <NavLink to="/watchHistory">
+          <NavLink to="/watchHistory" className="side-nav-link" className="side-nav-link" >
             <li className="pointer">
               <i class="fas fa-history pointer"></i>
               <span className="list-item-title">History</span>
             </li>
           </NavLink>
           
-          <NavLink to="/playlists">
+          <NavLink to="/playlists" className="side-nav-link">
           <li className="pointer">
             <i class="fas fa-list pointer"></i>
             <span className="list-item-title">Playlists</span>
           </li>
           </NavLink>
 
-          <NavLink to="/watchLaterVideos">
+          <NavLink to="/watchLaterVideos" className="side-nav-link">
             <li className="pointer">
               <i class="fas fa-clock pointer"></i>
               <span className="list-item-title">Watch later</span>
             </li>
           </NavLink>
 
-          <NavLink to="/likedVideos">
+          <NavLink to="/likedVideos" className="side-nav-link">
             <li className="pointer">
               <i class="fas fa-thumbs-up pointer"></i>
               <span className="list-item-title">Liked videos</span>
@@ -58,9 +58,9 @@ export const Home = () => {
                 />{" "}
               </Link>
               <div className="video-description">
-                <div class="avatar-wrapper-small">
+                {/* <div class="avatar-wrapper-small">
                   <img class="avatar-small" src={item.avatar} alt="avatar" />
-                </div>
+                </div> */}
                 <h4>{item.videoTitle}</h4>
                 <p className="small">{item.channelName}</p>
                 <p>{item.level}</p>
