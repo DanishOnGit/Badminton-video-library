@@ -1,7 +1,7 @@
 import { useVideo } from "../Contexts";
 import { Link } from "react-router-dom";
 
-export function Playlists() {
+export const Playlists = () => {
   const { state:{playlists} } = useVideo();
 
   return (
@@ -18,7 +18,7 @@ export function Playlists() {
                   
                     
                     <img
-                      style={{ width: "100%", height: "50%" }}
+                      className="thumbnail-img"
                       src={item.thumbnail}
                       alt="thumbnail"
                     />

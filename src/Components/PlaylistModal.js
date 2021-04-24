@@ -5,7 +5,7 @@ import {addToPlaylistHandler} from "../Utilities"
 // import {playlists} from "./Playlists";
 
 
-function UserPlaylists({playlist,videoDetails}){
+const UserPlaylists= ({playlist,videoDetails})=>{
   const {state:{playlists},dispatch} = useVideo();
   
   return <li >
@@ -15,7 +15,7 @@ function UserPlaylists({playlist,videoDetails}){
 }
 
 
-export function PlaylistModal({display,setDisplay,videoDetails}) {
+export const PlaylistModal=({display,setDisplay,videoDetails})=> {
 
   const [playlistName,setPlaylistName]=useState("");
   
@@ -32,9 +32,7 @@ export function PlaylistModal({display,setDisplay,videoDetails}) {
     <div className="modal-wrapper " style={{width:"25rem",height:"auto",display:display}}>
       <div className="modal-header">
         <h2>Add to Playlist</h2>
-        <span>
-          <i className="fas fa-times"></i>
-        </span>
+        
       </div>
       <div className="modal-body">
           <ul className="list-non-bullet">
@@ -44,7 +42,7 @@ export function PlaylistModal({display,setDisplay,videoDetails}) {
           </ul>
        <div>
          <input value={playlistName} onChange={(e)=>setPlaylistName(e.target.value)} type="text" placeholder="Add new playlist" />
-         <button  onClick={()=>createNewPlaylist(playlistName)} className="btn btn-primary"><i className="fas fa-plus"></i></button>
+         <button disabled={playlistName===""} onClick={()=>createNewPlaylist(playlistName)} className="btn btn-primary"><i className="fas fa-plus"></i></button>
          
          </div>
       </div>
@@ -52,7 +50,7 @@ export function PlaylistModal({display,setDisplay,videoDetails}) {
         <button onClick={()=>setDisplay("none")} className="btn btn-outline-secondary" id="closeMe">
           Close
         </button>
-        {/* <button onClick={()=>addToPlaylists} className="btn btn-primary">Add</button> */}
+        {/* <button onClick={()=>setDisplay("none")} className="btn btn-primary">Add</button> */}
       </div>
     </div>
   );

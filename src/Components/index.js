@@ -6,3 +6,4 @@ export {WatchHistory} from "./WatchHistory";
 export {Playlists} from "./Playlists";
 export {VideoPlayer} from "./ReactPlayer";
 export {PlaylistModal} from "./PlaylistModal";
+export {Navlinks} from "./Navlinks"
